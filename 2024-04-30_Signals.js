@@ -1,11 +1,6 @@
-class QThreeStrongReads {
-    FirstToThreeStrongReads(ids, strenths) {
-        return null;
-    }
+function FirstToThreeStrongReads(ids, strenths) {
+    return null;
 }
-
-// Example usage and testing
-const _threeStrongReads = new QThreeStrongReads();
 
 function testFirstToThreeStrongReads() {
     // Test cases
@@ -18,10 +13,10 @@ function testFirstToThreeStrongReads() {
 
     // Run test cases
     testCases.forEach((testCase, index) => {
-        const result = _threeStrongReads.FirstToThreeStrongReads(testCase.ids, testCase.strs);
+        const result = FirstToThreeStrongReads(testCase.ids, testCase.strs);
         const expectedResult = testCase.expected;
 
-        console.log(Test + Case + "${index + 1}:");
+        console.log(`Test Case ${index + 1}:`);
         console.log("Input:", testCase.ids, testCase.strs);
         console.log("Expected Result:", expectedResult);
         console.log("Actual Result:", result);
@@ -31,3 +26,12 @@ function testFirstToThreeStrongReads() {
 }
 
 testFirstToThreeStrongReads();
+
+
+/* Request: You will recieve two arrays of equal length. The first array will be string IDs and the second array will be the signal strength associated with each read.
+ So ids[0] will be the first scanned id and strength[0] will be that scans strength.
+  A strong read(scan) will be a scan with a strength above 10 (x > 10) Your job is to return the id that is first to have 5 strong reads.
+     *
+     
+Example: If ids = { "a", "b", "c", "a", "a", "b", "c", "a", "b", "c", "b" } and strength = { 12, 9, 16, 11, 7, 12, 10, 9, 12, 11, 15 }
+Then you would return "b" because its the the first to have 3 strengths over 10.*/
