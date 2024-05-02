@@ -1,6 +1,18 @@
 function FirstToThreeStrongReads(ids, strenths) {
-    return null;
-}
+    //Loops through each id and adds it to a Map if the signal is strong
+    const r = new Map();
+    for(const [key, id] of ids.entries()) {
+        if(!r.has(id) && strenths[key] >= 10) {
+            r.set(id,1);
+        } else if (r.has(id) && strenths[key] >= 10) {
+            r.set(id, r.get(id) + 1);
+            if (r.get(id) >= 3) {
+                return id
+            };
+        };
+    };
+    return null
+};
 
 function testFirstToThreeStrongReads() {
     // Test cases
